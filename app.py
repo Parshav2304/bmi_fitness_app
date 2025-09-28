@@ -116,10 +116,10 @@ if st.button('🎯 Get Your Fitness Plan', type="primary"):
         st.metric("Target Calories", f"{calories} kcal")
     with col4:
         plan_emoji = {
-            'Cut': '✂️',
-            'Bulk': '💪',
-            'Lean': '🎯',
-            'Recomp': '🔄'
+            'Cutting': '✂️',
+            'Bulking': '💪',
+            'Lean Bulk': '🎯',
+            'Body Recomp': '🔄'
         }
         st.metric("Plan", f"{plan_emoji.get(plan, '📋')} {plan}")
     
@@ -137,10 +137,10 @@ if st.button('🎯 Get Your Fitness Plan', type="primary"):
     # Plan explanation
     st.subheader("📝 Plan Details")
     plan_descriptions = {
-        'Cut': "Focus on fat loss while preserving muscle mass. Maintain a caloric deficit with adequate protein intake.",
-        'Bulk': "Build muscle mass and strength. Increase calories with emphasis on protein and complex carbs.",
-        'Lean': "Slow, controlled muscle gain while minimizing fat gain. Moderate caloric surplus.",
-        'Recomp': "Body recomposition - lose fat and gain muscle simultaneously. Maintain calories at TDEE level."
+        'Cutting': "Focus on fat loss while preserving muscle mass. Maintain a caloric deficit with adequate protein intake.",
+        'Bulking': "Build muscle mass and strength. Increase calories with emphasis on protein and complex carbs.",
+        'Lean Bulk': "Slow, controlled muscle gain while minimizing fat gain. Moderate caloric surplus.",
+        'Body Recomp': "Body recomposition - lose fat and gain muscle simultaneously. Maintain calories at TDEE level."
     }
     
     st.info(plan_descriptions.get(plan, "Follow a balanced approach to nutrition and training."))
@@ -176,3 +176,4 @@ Moderate: Exercise 3-5 days/week
 Active: Exercise 6-7 days/week
 Very Active: 2x/day or physical job
 """)
+
