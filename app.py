@@ -8,16 +8,16 @@ def predict_plan(height, weight, age, gender, activity_level, body_fat):
     
     # Rule-based plan assignment
     if bmi < 18.5:
-        return 'Bulk'
+        return 'Bulking'
     elif bmi > 25:
         if body_fat > 25 or (body_fat > 20 and gender == 1):
-            return 'Cut'
+            return 'Cutting'
         else:
-            return 'Recomp'
+            return 'Body Recomp'
     elif age < 25 and activity_level > 1.5:
-        return 'Lean'
+        return 'Lean Bulk'
     else:
-        return 'Recomp'
+        return 'Body Recomp'
 
 def calc_bmi(weight_kg, height_cm):
     h = height_cm / 100
@@ -33,11 +33,11 @@ def tdee_from_bmr(bmr, activity_level):
     return bmr * activity_level
 
 def adjust_calories_for_plan(tdee, plan):
-    if plan == 'Cut':
+    if plan == 'Cutting':
         return int(tdee - 500)
-    elif plan == 'Bulk':
+    elif plan == 'Bulking':
         return int(tdee + 400)
-    elif plan == 'Lean':
+    elif plan == 'Lean Bulk':
         return int(tdee + 150)
     else:
         return int(tdee)
@@ -176,4 +176,5 @@ Moderate: Exercise 3-5 days/week
 Active: Exercise 6-7 days/week
 Very Active: 2x/day or physical job
 """)
+
 
